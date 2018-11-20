@@ -1,0 +1,12 @@
+.about{
+    min-height: $min-height;
+    margin-bottom: $margin-bottom;
+    .container{
+        width: 100%;
+        margin: 0 auto;
+        max-width: $max-page-width;
+        display: flex;
+        flex-direction: column;
+        margin-top: 80px;
+    }
+}

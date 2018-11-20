@@ -1,0 +1,22 @@
+.signup {
+    width: 100%;
+    max-width: $max-page-width;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: $min-height;
+    .h1{
+        font-weight: 300;
+        font-size: $h1-font-size;
+        margin-top: 4rem;
+    }
+    .content{
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: $margin-bottom;
+        .column {
+            width: 48%;
+        }
+    }
+}

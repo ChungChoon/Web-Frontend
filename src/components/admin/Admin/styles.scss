@@ -1,0 +1,58 @@
+.admin{
+    color: $dark-gray;
+    min-height: $min-height;
+    margin-bottom: $margin-bottom;
+    .container{
+        width: 100%;
+        margin: 0 auto;
+        max-width: $max-page-width;
+        display: flex;
+        margin-top: 80px;
+        .column{
+            background-color: white;
+            &:first-child{
+                min-width: $aside-width;
+                padding-right: 40px;
+            }
+            .nav-name{
+                font-size: 32px;
+                font-weight: 500;
+                color: black;
+            }
+            .wrapper{
+                margin-top: 56px;
+                font-weight: 500;
+                .menu{
+                    font-size: 18px;
+                    padding: 15px 0;
+                    border-bottom: 1px solid $dark-gray;
+                    &>*{
+                        align-items: center;
+                        padding-right: 5px;
+                    }
+                    .link{
+                        display: flex;
+                        justify-content: space-between;
+                        text-decoration: none;
+                        color: $light-gray;
+                        &:hover, &:active{
+                            color: $dark-gray;
+                        }
+                    }
+                    .active-link{
+                        color:black;
+                    }
+                }
+            }
+        .choose-menu{
+            margin: 3rem 0;
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: black;
+            span{
+                color: $marine-blue;
+            }
+        }
+    }
+}
+}

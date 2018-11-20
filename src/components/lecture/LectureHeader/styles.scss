@@ -1,0 +1,33 @@
+.lecture-header{
+    height: 230px;
+    background-color: $light-gray;
+    .container{
+        max-width: $max-page-width;
+        width: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        padding: 1.5rem;
+        .type{
+            border: 1px solid $marine-blue;
+            padding: 0;
+            border-radius: 20px;
+            min-height: 1.7rem;
+            color: $marine-blue;
+            width: 2rem;
+            font-size: 1.1rem;
+            background-color: white;
+        }
+        .title{
+            margin-top: 1rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        .name{
+            margin-top: 1rem;
+            font-size: 1.3rem;
+            color: $dark-gray;
+            font-weight: 500;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+@import "~reset-css/reset.css";
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700,900|Noto+Sans:400,700');
+
+
+body {
+    background-color: $bg-color;
+    font-family : 'Noto Sans KR', 'Noto Sans' sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}

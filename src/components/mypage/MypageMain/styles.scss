@@ -1,0 +1,28 @@
+.mypage{
+    color: $dark-gray;
+    min-height: $min-height;
+    margin-bottom: $margin-bottom;
+    .header {
+        height: 300px;
+        background-color: $light-gray;
+    }
+    .container{
+        width: 100%;
+        margin: 0 auto;
+        max-width: $max-page-width;
+        display: flex;
+        margin-top: 80px;
+        .column{
+            background-color: white;
+            &:first-child{
+                min-width: $aside-width;
+                padding-right: 40px;
+            }
+            .nav-name{
+                font-size: 32px;
+                font-weight: 500;
+                color: black;
+            }
+        }
+    }
+}

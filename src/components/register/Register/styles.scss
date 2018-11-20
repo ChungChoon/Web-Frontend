@@ -1,0 +1,123 @@
+.register{
+    width: 100%;
+    min-height: $min-height;
+    display: flex;
+    flex-direction: column;
+    color: $dark-gray;
+    max-width: $max-page-width;
+    margin: 0 auto;
+    .header{
+        height: 300px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        h1{
+            font-size: 3rem;
+            font-weight: 300;
+            color: black;
+        }
+    }
+    .container{
+        width: 100%;
+        margin: 0 auto;
+        .form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .row{
+                display: flex;
+                flex-direction: column;
+                margin: 1.8rem 0;
+                &:nth-child(4){
+                    margin-top: -10px;
+                }
+                label{
+                    color: $marine-blue;
+                    font-size: 1.4rem;
+                    font-weight: 500;
+                }
+                .des{
+                    margin-left: 3rem;
+                    color: $light-gray2;
+                }
+                .underline{
+                    border-bottom: 1px solid $marine-blue;
+                    display: flex;
+                    align-items: center;
+                    .input{
+                        width: 100%;
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                        margin: 15px 0;
+                        font-size: 1rem;
+                        option{
+                            background-color: white;
+                        }
+                    }
+                    .circle{
+                        width: 40px;
+                        height: 40px;
+                        padding: 1rem 1rem;
+                        border-radius: 50%;
+                        border: 1px solid $marine-blue;
+                    }
+                    .num{
+                        display: inline-block;
+                        margin: 1rem 1rem;
+                        font-size: 2rem;
+                        color: black;
+                        max-width: 60px;
+                        border: none;
+                        outline: none;
+                    }
+                    .please{
+                        margin-left: -30px;
+                    }
+                    .form{
+                        padding: 10px 0;
+                        margin: 10px 0 5px 0;
+                        div{
+                            padding: 5px 0;
+                            border-bottom: .5px solid $line-color;
+                            margin: 5px 0;
+                        }
+                        label{
+                            font-size: 1rem;
+                            color: $dark-gray;
+                        }
+                        input{
+                            border: none;
+                            outline: none;
+                            &:last-child{
+                                width: 60%;
+                            }
+                        }
+                    }
+                    .column{
+                        width: 5%;
+                        padding-left: 1rem;
+                    }
+                }
+                .date{
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid $marine-blue;
+                    .input{
+                        width: 100%;
+                        background-color: transparent;
+                        outline: none;
+                        border: none;
+                        margin: 15px 0;
+                        font-size: 1rem;
+                    }
+                    span{
+                        margin: 0 1rem;
+                        font-size: 1rem;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+}

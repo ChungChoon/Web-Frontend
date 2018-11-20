@@ -1,0 +1,507 @@
+.first-step{
+    width: 100%;
+    max-width: $max-page-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    min-height: $min-height;
+    .step{
+        margin-top: 50px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: .3rem;
+        &>*{
+            color: $marine-blue;
+            font-size: 20px;
+            margin-left: -.1rem;
+        }
+        &:first-child{
+            margin-left: 0;
+        }
+        .stick{
+            height: .7rem;
+            width: 1rem;
+            border-bottom: 2px solid $marine-blue;
+        }
+    }
+    .header{
+        margin-top: 2rem;
+        margin-bottom: 60px;
+        font-size: 40px;
+        font-weight: 300;
+    }
+    .wrapper{
+        .terms{
+            display: flex;
+            flex-direction: column;
+            color: $dark-gray;
+            &>*{
+                border-bottom: .1px solid $dark-gray;
+            }
+            h4{
+                font-weight: 500;
+                font-size: 1.4rem;
+                padding-bottom: 20px;
+            }
+            h5{
+                font-weight: 500;
+                font-size: 18px;
+                padding-top: 27px;
+                padding-bottom: 15px;
+            }
+            div{
+                padding: 0 20px;
+            }
+            p{
+                border-bottom: 0;
+                padding-left: 20px;
+                margin-top: 1rem;
+            }
+            .row{
+                display: flex;
+                justify-content: space-between;
+                .detail{
+                    text-decoration: underline;
+                    font-weight: 500;
+                    padding: 1.3rem 0;
+                }
+            }
+            
+        }
+    }
+    .center{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: $margin-bottom;
+        .fill-button{
+          padding: .2rem 3rem;
+          margin-left: 10px;
+        }
+        .line-button{
+            padding: .2rem 3rem;
+            margin-right: 10px;
+        }
+    }
+}
+
+
+.secondStep{
+    width: 100%;
+    max-width: $max-page-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    min-height: $min-height;
+    .step{
+        margin-top: 50px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: .3rem;
+        &>*{
+            color: $marine-blue;
+            font-size: 20px;
+            margin-left: -.1rem;
+        }
+        &:first-child{
+            margin-left: 0;
+        }
+        .stick{
+            height: .7rem;
+            width: .7rem;
+            border-bottom: 2px solid $marine-blue;
+        }
+    }
+    .header{
+        margin-top: 28px;
+        margin-bottom: 60px;
+        font-size: 40px;
+        font-weight: 300;
+    }
+    .wrapper{
+        .form{
+            display: flex;
+            flex-direction: column;
+            color: $dark-gray;
+            &>*{
+                border-bottom: .1px solid $dark-gray;
+            }
+            h5{
+                font-weight: 500;
+                font-size: 1.3rem;
+                padding-top: 27px;
+                padding-bottom: 15px;
+            }
+            .row{
+                label{
+                    font-size: 1rem;
+                    width: 200px;
+                    display: inline-block;
+                }
+                input[type=text], input[type=password] {
+                    width: 600px;
+                    padding: .8rem;
+                    margin: 10px 0;
+                    display: inline-block;
+                    border: none;
+                    background: #f1f1f1;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: black;
+                }
+                input[type=email]{
+                    width: 470px;
+                    padding: .8rem;
+                    margin: 10px 0;
+                    display: inline-block;
+                    border: none;
+                    background: #f1f1f1;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: black;
+                }
+                .duplicate{
+                    font-size: 1rem;
+                    width: 120px;
+                    padding: .8rem;
+                    margin-left: .5rem;
+                    background-color: $dark-gray;
+                    border: 0;
+                    color: white;
+                    cursor: pointer;
+                    &:focus, :active{
+                        outline: none;
+                    }
+                }
+                input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+                    background-color: #ddd;
+                    outline: none;
+                }
+                input[type=number] {
+                    width: 194px;
+                    padding: .8rem;
+                    margin: 10px 0;
+                    margin-right: 10px;
+                    display: inline-block;
+                    border: none;
+                    background: #f1f1f1;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: black;
+                }
+                input[type=number]:focus {
+                    background-color: #ddd;
+                    outline: none;
+                }
+                .warning{
+                    font-size: .8rem;
+                    color: $marine-blue;
+                    margin-left: 200px;
+                    margin-bottom: 10px;
+                }
+                &:nth-child(8){
+                    display: flex;
+                    margin: 15px 0;
+                    .column{
+                        display: flex;
+                    .container2 {
+                        display: inline-block;
+                        position: relative;
+                        padding-left: 35px;
+                        margin-bottom: 12px;
+                        cursor: pointer;
+                        font-size: 1rem;
+                        -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                        user-select: none;
+                    }
+                    
+                    .container2 input {
+                        position: absolute;
+                        opacity: 0;
+                        cursor: pointer;
+                    }
+
+                      .checkmark2 {
+                        position: absolute;
+                        top: -5px;
+                        left: 0;
+                        height: 25px;
+                        width: 25px;
+                        background-color: #eee;
+                        border-radius: 50%;
+                      }
+                      
+                      .container2:hover input + .checkmark2 {
+                        background-color: #ccc;
+                      }
+                      
+                      .container2 input:checked + .checkmark2 {
+                        background-color: $marine-blue;
+                      }
+                      
+                      .checkmark2:after {
+                        content: "";
+                        position: absolute;
+                        display: none;
+                      }
+                      
+                      .container2 input:checked + .checkmark2:after {
+                        display: block;
+                      }
+                      
+                      .container2 .checkmark2:after {
+                        top: 9px;
+                        left: 9px;
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        background: white;
+                      }
+                    }
+                }
+                &:last-child{
+                    display: flex;
+                    label{
+                        margin-top: 1.5rem;
+                    }
+                    .fileInputTextbox{
+                        width: 470px;
+                    }
+                    .file-input-div{
+                        position:relative;
+                        width: 130px;
+                        height: 60px;
+                        overflow: hidden;
+                        .hidden{
+                            font-size: 45px;
+                            position: absolute;
+                            right: 0px;
+                            top: 0px;
+                            opacity: 0;
+                            // width: 100px;
+                            cursor: pointer;
+                        }
+                    }
+                    .file-input-button{
+                        font-size: 1rem;
+                        width: 120px;
+                        padding: .8rem;
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        background-color: $dark-gray;
+                        border: 0;
+                        color: white;
+                    }
+                    
+                }
+            }
+        }
+    }
+    .center{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: $margin-bottom;
+    }
+}
+
+
+.third-step{
+    width: 100%;
+    max-width: $max-page-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    min-height: $min-height;
+    .step{
+        margin-top: 50px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: .3rem;
+        &>*{
+            color: $marine-blue;
+            font-size: 20px;
+            margin-left: -.1rem;
+        }
+        &:first-child{
+            margin-left: 0;
+        }
+        .stick{
+            height: .7rem;
+            width: .7rem;
+            border-bottom: 2px solid $marine-blue;
+        }
+    }
+    .header{
+        margin-top: 28px;
+        margin-bottom: 60px;
+        font-size: 40px;
+        font-weight: 300;
+    }
+    .wrapper{
+        .form{
+            display: flex;
+            flex-direction: column;
+            color: $dark-gray;
+            &>*{
+                border-bottom: .1px solid $dark-gray;
+            }
+            h5{
+                font-weight: 500;
+                font-size: 1.4rem;
+                padding-top: 27px;
+                padding-bottom: 15px;
+            }
+            .row{
+                label{
+                    font-size: 1rem;
+                    width: 200px;
+                    display: inline-block;
+                }
+                input[type=text], input[type=password] {
+                    width: 600px;
+                    padding: .8rem;
+                    margin: 10px 0;
+                    display: inline-block;
+                    border: none;
+                    background: #f1f1f1;
+                    font-weight: 500;
+                    font-size: 1rem;
+                    color: black;
+                }
+                input[type=text]:focus, input[type=password]:focus {
+                    background-color: #ddd;
+                    outline: none;
+                }
+                input[type=number] {
+                    width: 194px;
+                    padding: .8rem;
+                    margin: 10px 0;
+                    margin-right: 10px;
+                    display: inline-block;
+                    border: none;
+                    background: #f1f1f1;
+                    font-weight: 500;
+                    font-size: 20px;
+                    color: black;
+                }
+                input[type=number]:focus {
+                    background-color: #ddd;
+                    outline: none;
+                }
+                .warning{
+                    color: $marine-blue;
+                    margin-left: 200px;
+                    margin-bottom: 10px;
+                }
+                &:nth-child(3){
+                    input{
+                        width: 470px;
+                    }
+                    .validate{
+                        color: white;
+                        background-color: $dark-gray;
+                        font-size: 1rem;
+                        padding: 12px 26px;
+                        border: 0;
+                        margin-left: 10px;
+                        width: 120px;
+                    }
+                }
+                &:last-child{
+                    display: flex;
+                    label{
+                        margin-top: 1.5rem;
+                    }
+                    .fileInputTextbox{
+                        width: 470px;
+                    }
+                    .file-input-div{
+                        position:relative;
+                        width: 130px;
+                        height: 60px;
+                        overflow: hidden;
+                        .hidden{
+                            font-size: 45px;
+                            position: absolute;
+                            right: 0px;
+                            top: 0px;
+                            opacity: 0;
+                            // width: 100px;
+                            cursor: pointer;
+                        }
+                    }
+                    .file-input-button{
+                        font-size: 1rem;
+                        width: 120px;
+                        padding: .8rem;
+                        position: absolute;
+                        top: 10px;
+                        left: 10px;
+                        background-color: $dark-gray;
+                        border: 0;
+                        color: white;
+                    }
+                    
+                }
+            }
+            .add{
+                &>*{
+                    margin: 10px 0;
+                }
+                label{
+                    font-size: 1rem;
+                    width: 200px;
+                    color: $light-gray;
+                    display: inline-block;
+                }
+                .interest{
+                    width: 600px;
+                    display: inline-block;
+                    .buttons{
+                        display: flex;
+                        justify-content: flex-start;
+                        .line-button{
+                            border: 1px solid $marine-blue;
+                            color: $marine-blue;
+                            padding: 0px 15px;
+                            min-width: 70px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    .center{
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        margin-bottom: $margin-bottom;
+    }
+}
+
+
+.final-step{
+    width: 100%;
+    max-width: $max-page-width;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0 auto;
+    min-height: $min-height;
+    .header{
+        margin-top: 3rem;
+        margin-bottom: 60px;
+        font-size: 40px;
+        font-weight: 300;
+        color: $marine-blue;
+    }
+}
