@@ -36,7 +36,7 @@ export default handleActions({
         return state.set('walletInstance', Map({}))
     },
     [CREATE_WALLET]: (state, action) => {
-        console.log(action.payload)
+        // console.log(action.payload)
         const newWalletInstance = cav.klay.accounts.create(action.payload)
         cav.klay.personal.importRawKey(newWalletInstance.privateKey.slice(2), action.payload).then(
             function(resolveData){

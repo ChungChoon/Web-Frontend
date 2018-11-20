@@ -58,4 +58,4 @@ export default connect(
     (dispatch) => ({
         LectureActions: bindActionCreators(lectureActions, dispatch),
     })
-)(Admin);
+)(Admin);                             

@@ -32,7 +32,6 @@ class AttendanceForm extends Component{
             user_list.splice(index, 1)
           }
             this.setState({ user_list: user_list })
-            console.log(this.state.user_list)
     }
 
     handleAttendance = async() => {

@@ -71,7 +71,7 @@ export default handleActions({
         return state.setIn([ location, 'error'], message);
     },
     [SET_LOGGED_INFO]: (state, action) => {
-        console.log(action.payload.data[0])
+        // console.log(action.payload.data[0])
         return state.setIn(['loginInfo', 'mail'], action.payload.data[0].mail)
         .setIn(['loginInfo', 'name'], action.payload.data[0].name)
         .setIn(['loginInfo', 'wallet'], action.payload.data[0].wallet)

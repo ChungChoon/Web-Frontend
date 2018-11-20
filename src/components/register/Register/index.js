@@ -32,8 +32,8 @@ class Register extends Component {
             type: '',
             curri_title: [''],
             curri_content: [''],
-            address: JSON.parse(sessionStorage.getItem('walletInstance')).address,
-            lecture_nb: null
+            address: sessionStorage.getItem('walletInstance')? JSON.parse(sessionStorage.getItem('walletInstance')).address : null,
+            lecture_bn: null
         }
     }
 
@@ -55,17 +55,18 @@ class Register extends Component {
     }
 
     sendTransaction = async (cost) => {
+        let lecture_bn;
 
-        await this.mainContract.methods.createLecture(cost).send({
+        return await this.mainContract.methods.createLecture(cost).send({
             from: this.state.address,
             gas: '300000',
           })
             .on('transactionHash', console.log)
-            .on('receipt', function(receipt) {
+            .on('receipt', (receipt) => {
+                lecture_bn = receipt.events.CreatingLecture.returnValues['lectureNumber'];
                 this.setState({
-                    lecture_nb: receipt.events.CreatingLecture.returnValues['lectureNumber']
+                    lecture_bn: lecture_bn
                 })
-
               })
             .on('error', console.log)
     }
@@ -78,16 +79,18 @@ class Register extends Component {
         const kind = parseInt(writeLecture.toJS().kind);
         const period = parseInt(writeLecture.toJS().period);
         const curri_count = curri_title.length;
-        const lecture_bn = 7; // 김농부로 7까지 보냈음
         const token = sessionStorage.getItem('token');
         
         await this.sendTransaction(price);
 
+        const lecture_bn = this.state.lecture_bn;
         try {
             await LectureActions.registerLecture({ token, lecture_bn, title, target, kind, period, start_date, end_date, place, curri_title, curri_content, intro, price, limit_num, curri_count });
         } catch (e) {
             alert(e.response.data.message)
         }
+        alert('강의가 등록되었습니다.')
+        this.props.history.push('/')
     }
 
     handleCurriTitle = (e) => {

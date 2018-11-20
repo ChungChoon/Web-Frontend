@@ -5,6 +5,7 @@ import Wallet from "components/common/Wallet";
 class UserProfile extends Component {
     state = {
         showMenu: false,
+        name: sessionStorage.getItem('name') || '익명'
     }
 
     showMenu = (event) => {
@@ -26,12 +27,11 @@ class UserProfile extends Component {
       }
 
     render () {
-      const name = sessionStorage.getItem('name') || '익명';
       return (
               <div className={styles.dropdown}>
               <button onClick={this.showMenu} className={styles.dropbtn}>
                   <img src={require("images/ic_people_blue56.png")} className={styles.img} alt="프로필"/>
-                  <span className={styles.username}>{name}</span>
+                  <span className={styles.username}>{this.state.name}</span>
               </button>
               {
             this.state.showMenu

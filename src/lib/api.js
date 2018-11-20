@@ -7,15 +7,9 @@ export const signupStudent = ({mail, passwd, name, sex, hp, birth, key, wallet})
 export const checkEmailDuplication = (mail) => axios.post(`${BASE_URL}/user/dupcheck/mail`, {mail});
 export const login = ({mail, passwd}) => axios.post(`${BASE_URL}/user/signin/farmer`, {mail, passwd});
 
-export const registerLecture = ({token, lecture_bn, title, target, kind, period, start_date, end_date, place, curri_title, curri_content, intro, price, limit_num, curri_count}) => 
-    {   console.log(token, lecture_bn, title, target, kind, period) 
-        console.log(start_date, end_date, place)
-        console.log(curri_title, curri_content) 
-        console.log(intro, price, limit_num, curri_count)
-        return axios.post(`${BASE_URL}/lecture/create`, 
+export const registerLecture = ({token, lecture_bn, title, target, kind, period, start_date, end_date, place, curri_title, curri_content, intro, price, limit_num, curri_count}) =>  axios.post(`${BASE_URL}/lecture/create`, 
     {lecture_bn, title, target, kind, period, start_date, end_date, place, curri_title, curri_content, intro, price, limit_num, curri_count}, 
     {headers: {token}});
-}
 export const getMyLecture = (token) => axios.get(`${BASE_URL}/farmer`, { headers: { token }});
 
 export const getLectureDetail = (token, lid) => axios.get(`${BASE_URL}/lecture/${lid}`, { headers: { token }});

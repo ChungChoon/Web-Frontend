@@ -52,7 +52,6 @@ class SecondStep extends Component {
       }
 
     _nextStep = (e) => {
-        console.log(e);
         const { validate } = this;
         const { error, duplication, type } = this.props;
         e.preventDefault()
@@ -97,12 +96,12 @@ class SecondStep extends Component {
         const mail = this.mail.current.value;
         try {
             await UserActions.checkEmailDuplication(mail);
-            console.log(this.props.duplication);
+            // console.log(this.props.duplication);
             if(this.props.duplication === 'duplication') {
                 this.setError('이미 존재하는 이메일입니다.');
             } else {
-                
                 this.setError(null);
+                alert('사용가능합니다.')
             }
         } catch (e) {
             console.log(e);

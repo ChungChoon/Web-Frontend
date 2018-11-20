@@ -1,7 +1,7 @@
 import Caver from 'caver-js'
 
 export const config = {
-  rpcURL: 'http://127.0.0.1:8551'
+  rpcURL: 'http://5d7b917b.ngrok.io'
 }
 
 export const cav = new Caver(config.rpcURL)

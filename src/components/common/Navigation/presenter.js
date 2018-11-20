@@ -6,7 +6,6 @@ import UserProfile from "components/common/UserProfile";
 import { connect } from "react-redux";
 
 const Navigation = props => {
-    console.log(props.isLoggedIn);
     return (
      <div className={styles.navigation}>
         <div className={styles.inner}>

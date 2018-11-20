@@ -8,7 +8,8 @@ class LectureItem extends Component {
     }
 
     componentDidMount() {
-        this.props.getLectureEvaluation(0).then(result => {
+        const lecture_id = this.props.lecture_pk? parseInt(this.props.lecture_pk) : 0
+        this.props.getLectureEvaluation(lecture_id).then(result => {
             this.setState({
                 evaluation: result
             })
@@ -16,12 +17,12 @@ class LectureItem extends Component {
     }
 
     render(){
-        console.log(this.props.getLectureEvaluation)
         let button;
+        const lecture_id = this.props.lecture_pk? parseInt(this.props.lecture_pk) : 0
         if(this.props.flag===10)
-            button = <Button color="secondary" className={styles.price} onClick={() => (this.props.handlePay(this.props.lecture_id))}>지급</Button>
+            button = <Button color="secondary" className={styles.price} onClick={() => (this.props.handlePay(lecture_id))}>지급</Button>
         else 
-            button = <Button color="secondary" className={styles.price} onClick={() => (this.props.handleAttendance(7))}>출석체크</Button>
+            button = <Button color="secondary" className={styles.price} onClick={() => (this.props.handleAttendance(lecture_id))}>출석체크</Button>
         return (
             <div className={styles.lectureItem}>
             <div className={styles.wrapper}>

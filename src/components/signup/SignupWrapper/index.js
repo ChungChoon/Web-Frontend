@@ -36,21 +36,21 @@ class SignupWrapper extends Component {
 
     saveValues = (field_value) => {
         fieldValues =  Object.assign({}, fieldValues, field_value)
-        console.log(fieldValues)
+        // console.log(fieldValues)
     }
 
     submitRegistration = async (type) => {
-        console.log(type)
+        // console.log(type)
         const { UserActions, history, WalletActions } = this.props;
 
         try {
-            console.log(fieldValues.passwd)
+            // console.log(fieldValues.passwd)
             await WalletActions.createWallet(fieldValues.passwd);
-            console.log(this.props.newWalletInstance)
+            // console.log(this.props.newWalletInstance)
             const private_key = this.props.newWalletInstance.toJS().privateKey;
             const wallet = this.props.newWalletInstance.toJS().address;
-            console.log(private_key)
-            console.log(wallet)
+            // console.log(private_key)
+            // console.log(wallet)
             const key = 'blah';
 
             if(type === "teacher")

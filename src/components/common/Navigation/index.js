@@ -7,7 +7,6 @@ import {bindActionCreators} from 'redux';
 
 export default withRouter(connect(
   (state) => {
-    console.log(state)
     return {
     isLoggedIn: state.user.get('isLoggedIn'),
     loginInfo: state.user.get('loginInfo')

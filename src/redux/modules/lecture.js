@@ -1,6 +1,6 @@
 import { createAction, handleActions } from 'redux-actions';
 
-import { Map, List, fromJs } from 'immutable';
+import { Map, List } from 'immutable';
 import { pender } from 'redux-pender';
 import * as api from 'lib/api';
 
@@ -53,7 +53,8 @@ export default handleActions({
         return state.setIn(['writeLecture', name], value);
     },
     ...pender({
-        type: REGISTER_LECTURE
+        type: REGISTER_LECTURE,
+        onSuccess: (state, action) => state
     }),
     ...pender({
         type: LOAD_MYLECTURE,
@@ -69,7 +70,7 @@ export default handleActions({
     ...pender({
         type: LOAD_PARTICIPANTS_INFO,
         onSuccess: (state, action) => {
-            console.log(action.payload.data.data)
+            // console.log(action.payload.data.data)
             return (state.set('allParticipants', List(action.payload.data.data)))}
     }),
     ...pender({

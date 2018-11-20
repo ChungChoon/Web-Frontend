@@ -19,7 +19,8 @@ class MyLecture extends Component {
             && new cav.klay.Contract(deployedABI, deployedAddress)
 
         this.state={
-            lecture: []
+            lecture: [],
+            totalEval: 0
         }
     }
 
@@ -34,27 +35,44 @@ class MyLecture extends Component {
     }
 
     calculateAvgEvaluation = () => {
-        //강사의 평균평점 계산
+        let sum=0
+
+        for(let i=0; i<this.state.lecture.length; i++){
+            sum += this.state.lecture[i];
+        }
+        
+        this.setState({
+            totalEval: sum/(this.state.lecture.length)
+        })
     }
 
     getLectureEvaluation = async(lecture_pk) => {
-        // console.log(lecture_pk)
-        //강의별 평점 가져오기
         const address = JSON.parse(sessionStorage.getItem('walletInstance')).address
 
         return await this.mainContract.methods.calculateEvaluationAveragePoint(lecture_pk).call({
             from: address
         })
-            .then(result => result)
-            .catch(error => 0)
+            .then(result => {
+                this.setState({
+                    lecture: [...this.state.lecture, result]
+                  }, () => { 
+                      return this.calculateAvgEvaluation()})
+                return result})
+            .catch(error => {
+                this.setState({
+                    lecture: [...this.state.lecture, 0]
+                  }, () => { 
+                    return this.calculateAvgEvaluation()})
+                return 0
+            })
     }
 
-    getLectureId = async (lectureNumber) => {
-        await this.mainContract.methods.getLectureId(lectureNumber).call({
-            from: this.state.address
-        })
-          .then(result => console.log(result))
-    }
+    // getLectureId = async (lectureNumber) => {
+    //     await this.mainContract.methods.getLectureId(lectureNumber).call({
+    //         from: this.state.address
+    //     })
+    //       .then(result => console.log(result))
+    // }
     
     render() {
         return (
@@ -69,8 +87,8 @@ class MyLecture extends Component {
                             <Icon className={styles.circle}>lens</Icon>
                             <Icon className={styles.circle} style={{color: '#707070'}}>lens</Icon>
                             </div>
-                            <div className={styles.percent}>80%</div>
-                            <div className={styles.total}>/{" "}100%</div>
+                            <div className={styles.percent}>{this.state.totalEval.toFixed(2)}</div>
+                            <div className={styles.total}>/{" "}100</div>
                         </div>
                     </div>
                     <h2 className={styles.chooseMenu}>강의목록</h2>

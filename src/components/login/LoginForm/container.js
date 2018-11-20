@@ -37,7 +37,7 @@ class Container extends Component {
             if(loggedInfo.data[0].flag === 10)
                 history.push('/admin');
             else
-                history.push('/');
+            window.location.href = '/';
                 // todo
         } catch (e) {
             console.log(e)
